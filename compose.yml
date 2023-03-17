@@ -1,0 +1,25 @@
+version: "4"
+
+services:
+  nestjs:
+    build:
+      dockerfile: Dockerfile
+    image: nest-app:latest
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/app
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DATABASE: test
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: example
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
