@@ -4,7 +4,7 @@ services:
   nestjs:
     build:
       dockerfile: Dockerfile
-    image: nest-app:latest
+    image: thepiotrow/nest-app:latest
     ports:
       - 3000:3000
     volumes:
